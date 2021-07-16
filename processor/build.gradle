@@ -1,0 +1,23 @@
+plugins {
+    id 'java-library'
+}
+
+//dependencies {
+//    implementation fileTree(dir: 'libs', include: ['*.jar'])
+//    implementation 'com.google.auto.service:auto-service:1.0'
+//    implementation project(path: ':annotations')
+//    implementation 'com.squareup:javapoet:1.13.0'
+//}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_7
+    targetCompatibility = JavaVersion.VERSION_1_7
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.squareup:javapoet:1.13.0'//JavaPoet 编写代码使用
+    implementation 'com.google.auto.service:auto-service:1.0-rc7'
+    implementation project(path: ':annotations')
+    annotationProcessor 'com.google.auto.service:auto-service:1.0-rc7'//auto-service 注册Processor
+}
